@@ -6,9 +6,9 @@ Codes are stored as pronto hex in an xml resource file (res/xml/remotes.xml). Sa
 This project can be opened with the eclipse android development environment included with the Android SDK.
 
 # Compatibility
-Known compatible devices
+## Known compatible devices
 * Galaxy Note 8.0
-Untested but probably compatible
+## Untested but probably compatible
 * Galaxy Note 10.1
 * Galaxy S4
 
