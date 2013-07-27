@@ -8,6 +8,7 @@ This project can be opened with the eclipse android development environment incl
 # Compatibility
 ## Known compatible devices
 * Galaxy Note 8.0
+
 ## Untested but probably compatible
 * Galaxy Note 10.1
 * Galaxy S4
