@@ -19,7 +19,9 @@ public class IRDAService implements IRService {
 		} catch (Exception e) {
 			Toast.makeText(activity.getApplicationContext(),
 					"Error: Can't get the IrDA service!", Toast.LENGTH_LONG)
-					.show();
+				.show();
+			irdaService = new DummyIRService();
+			c = DummyIRService.class;
 		}
 		Class p[] = { String.class };
 		try {
