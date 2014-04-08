@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
-import com.fishjord.irwidget.ir.DummyIRService;
 import com.fishjord.irwidget.ir.IRDAService;
 import com.fishjord.irwidget.ir.IRService;
 import com.fishjord.irwidget.ir.codes.CodeManager;
