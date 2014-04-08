@@ -6,7 +6,9 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+	android:targetSdkVersion="17" />
+
+    <uses-feature android:name="android.hardware.consumerir" android:required="true" />
 
     <application
         android:allowBackup="true"
