@@ -5,6 +5,7 @@ import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -81,7 +82,9 @@ public class MainActivity extends Activity {
 		
 		for(IRButton button : manufacturer.getButtons()) {
 			final IRButton thisButton = button;
-			Button newButton = new Button(this);
+			//Button newButton = new Button(this);
+			// hm, ignores the colors?
+			Button newButton = new Button(new ContextThemeWrapper(MainActivity.this, R.style.btnStyleOrange));
 			newButton.setText(thisButton.getDisplay());
 			
 			newButton.setOnClickListener(new OnClickListener() {
@@ -101,7 +104,7 @@ public class MainActivity extends Activity {
 				relativeParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 				relativeParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
 			} else {
-				if(numButtons % 6 == 0) {
+				if(numButtons % 4 == 0) {
 					relativeParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
 					relativeParams.addRule(RelativeLayout.BELOW, id);
 				} else {
@@ -113,6 +116,13 @@ public class MainActivity extends Activity {
 			id++;
 			newButton.setId(id);
 			
+			// http://www.mindfreakerstuff.com/2012/09/50-useful-android-custom-button-style-set-1/
+			/*int style = (Integer) null; 
+			if(numButtons % 2 == 0)
+				style=R.style.btnStyleOrange;
+				else
+				style=R.style.btnStyleBlackpearl;
+			*/
 			newButton.setLayoutParams(relativeParams);
 			
 			layout.addView(newButton);
