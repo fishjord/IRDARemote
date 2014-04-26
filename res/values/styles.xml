@@ -17,4 +17,29 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+        <style name="btnStyleOrange" parent="@android:style/Widget.Button">
+		<item name="android:textSize">15sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#FFFFFF</item>
+		<item name="android:gravity">center</item>
+		<item name="android:shadowColor">#000000</item>
+		<item name="android:shadowDx">1</item>
+		<item name="android:shadowDy">1</item>
+		<item name="android:shadowRadius">0.6</item>
+		<item name="android:background">@drawable/custom_btn_orange</item>
+		<item name="android:padding">10dip</item>
+	</style>
+	
+    <style name="btnStyleBlackpearl" parent="@android:style/Widget.Button">
+		<item name="android:textSize">15sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#FFFFFF</item>
+		<item name="android:gravity">center</item>
+		<item name="android:shadowColor">#000000</item>
+		<item name="android:shadowDx">1</item>
+		<item name="android:shadowDy">1</item>
+		<item name="android:shadowRadius">0.6</item>
+		<item name="android:background">@drawable/custom_btn_black_pearl</item>
+		<item name="android:padding">10dip</item>
+	</style>
 </resources>
