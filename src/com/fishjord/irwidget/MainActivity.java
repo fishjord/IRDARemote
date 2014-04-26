@@ -3,10 +3,12 @@ package com.fishjord.irwidget;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -27,6 +29,10 @@ public class MainActivity extends Activity {
 	private CodeManager codeManager;
 	private IRService service;
 	private Manufacturer manufacturer;
+	/* for dynamic menu creation... */
+	private static final int MENU_SETTINGS  = 0;
+	private static final int MENU_ABOUT  = 1;
+	private static final int MENU_LICENSE  = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +139,20 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		//menu.add(0, MENU_ABOUT, 0, "About").setIcon(R.drawable.ic_launcher);
 		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+	// Intents must be placed in the AndroidManifest.xml file ...
+	int id = item.getItemId();
+	if(id == R.id.action_settings) startActivity(new Intent(this, Settings.class));
+	else if(id == R.id.action_about) startActivity(new Intent(this, About.class));
+	else if(id == R.id.action_license) startActivity(new Intent(this, License.class));
+	else return false;
+
+	return true;
 	}
 }
