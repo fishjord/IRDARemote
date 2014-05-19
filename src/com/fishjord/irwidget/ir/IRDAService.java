@@ -13,22 +13,15 @@ public class IRDAService implements IRService {
 
 	public IRDAService(Activity activity) {
 		irdaService = activity.getApplicationContext().getSystemService("irda");
-		Class c = null;
-		try {
-			c = irdaService.getClass();
-		} catch (Exception e) {
-			Toast.makeText(activity.getApplicationContext(),
-					"Error: Can't get the IrDA service!", Toast.LENGTH_LONG)
-				.show();
-			irdaService = new DummyIRService();
-			c = DummyIRService.class;
-		}
+		Class c = irdaService.getClass();
 		Class p[] = { String.class };
 		try {
 			sendMethod = c.getMethod("write_irsend", p);
 		} catch (NullPointerException e) {
-			Toast.makeText(activity.getApplicationContext(),
-					"Error sending IR command!", Toast.LENGTH_LONG).show();
+			Toast.makeText(
+                activity.getApplicationContext(),
+				"Error sending IR command!", Toast.LENGTH_LONG
+            ).show();
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		}

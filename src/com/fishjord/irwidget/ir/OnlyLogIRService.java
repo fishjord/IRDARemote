@@ -4,11 +4,11 @@ import android.util.Log;
 
 import com.fishjord.irwidget.ir.codes.IRCommand;
 
-public class DummyIRService implements IRService {
+public class OnlyLogIRService implements IRService {
 
 	@Override
 	public void sendCommand(IRCommand command) {
-		Log.d(this.getClass().getCanonicalName(), command.toString());		
+		Log.d(this.getClass().getCanonicalName(), command.toString());
 	}
 
 }
