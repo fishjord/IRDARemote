@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.fishjord.irwidget.ir.IRDAService;
+import com.fishjord.irwidget.ir.IRDAServiceFactory;
 import com.fishjord.irwidget.ir.IRService;
 import com.fishjord.irwidget.ir.codes.CodeManager;
 import com.fishjord.irwidget.ir.codes.IRButton;
@@ -48,7 +49,7 @@ public class MainActivity extends Activity {
 		try {
 			codeManager = CodeManager.getInstance(this.getApplicationContext());
 			// service = new DummyIRService();
-			service = new IRDAService(this);
+			service = IRDAServiceFactory.produce(this);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

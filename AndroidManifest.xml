@@ -4,9 +4,11 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.TRANSMIT_IR" />
+
     <uses-sdk
         android:minSdkVersion="8"
-	android:targetSdkVersion="17" />
+	android:targetSdkVersion="19" />
 
     <uses-feature android:name="android.hardware.consumerir" android:required="true" />
 
